@@ -1,6 +1,10 @@
 import numpy as np
 input = open('input', 'r').read().split(',')
-daysToSimulate = 80
+
+# 80 For part 1, 256 for part 2 - everything else is the same
+daysToSimulate = 256
+
+# Crude way to initialize my starting list - don't know of a better way
 values, counts = np.unique(input, return_counts=True)
 FishMetrics = [[0, 0]]
 for i in range(len(values)):
@@ -14,6 +18,7 @@ for i in range(6, 9):
     CurrentValue.append(0)
     FishMetrics.append(CurrentValue)
 
+# The actual simulation
 for day in range (0, daysToSimulate):
     Fishamount = 0
     FishesInLabour=FishMetrics[0][1]
